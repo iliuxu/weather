@@ -2,6 +2,7 @@ package com.weather.logic
 
 import android.util.Log
 import androidx.lifecycle.liveData
+import com.weather.logic.dao.PlaceDao
 import com.weather.logic.model.Place
 import com.weather.logic.model.Weather
 import com.weather.logic.network.WeatherNetwork
@@ -66,4 +67,7 @@ object Repository {
             }
             emit(result)
         }
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+    fun getSavePlace() = PlaceDao.getSavePlace()
+    fun isSavedPlace() = PlaceDao.isPlaceSaved()
 }
